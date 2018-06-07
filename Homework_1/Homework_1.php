@@ -1,6 +1,7 @@
 <?php
 
 echo '<b>' . 'Task #1' . '</b><br><br>';
+
 $name = 'Ольга';
 $age = '27';
 echo "Меня зовут: $name" . '<br>';
@@ -15,12 +16,12 @@ const DRAWINGS = 80;
 const FELTPENS = 23;
 const PENSILS = 40;
 const PAINTS = DRAWINGS - FELTPENS - PENSILS;
-
 echo "Условие задачи: на школьной выставке " . DRAWINGS . " рисунков, " .
 FELTPENS . " из них выполнены фломастерами, " . PENSILS . " карандашами, а остальные — красками. 
 Сколько рисунков выполнены красками?" . '<br>';
 echo "Ответ: красками нарисованы " . PAINTS . " рисунков.";
 echo '<br><br><br>';
+
 
 
 echo '<b>' . 'Task #3' . '</b><br><br>';
@@ -42,6 +43,7 @@ else {
 echo '<br><br><br>';
 
 
+
 echo '<b>' . 'Task #4' . '</b><br><br>';
 
 $day = rand (1,10);
@@ -60,6 +62,7 @@ switch ($day) {
 echo '<br><br><br>';
 
 
+
 echo '<b>' . 'Task #5' . '</b><br><br>';
 
 $bmw = array('model' => 'X5', 'speed' => 120, 'doors' => 5, 'year' => 2015);
@@ -72,25 +75,26 @@ foreach ($cars as $key => $value) {
 }
 
 
+
 echo '<b>' . 'Task #6' . '</b><br><br>';
 
-
-echo "<table style='border: solid 1px black;'>";
-for ($i = 1; $i <= 10; $i++) {
-    echo "<tr style='height: 25px;'>";
+echo "<table style='border: 1px solid black'>";
+$cols = 10;
+$rows = 10;
+for ($i = 1; $i<=$rows; $i++) {
+    echo "<tr style='height: 25px'>";
     $rowCheck = $i % 2;
-    for ($j = 1; $j <= 10; $j++) {
+    for ($j = 1; $j <= $cols; $j++) {
         $columnCheck = $j % 2;
         $number = $i * $j;
-        if ($rowCheck && $columnCheck) {
-            $number = "[$number]";
-        } elseif ($rowCheck === 0 && $columnCheck === 0) {
-            $number = "($number)";
+        if ($rowCheck !=0 && $columnCheck !=0) {
+            $number = "<b>[$number]</b>";
+        }
+        elseif ($rowCheck === 0 && $columnCheck === 0) {
+            $number = "<b>($number)</b>";
         }
         echo "<td style='width: 25px; text-align: center'>$number</td>";
     }
     echo "</tr>";
 }
 echo "</table>";
-
-
