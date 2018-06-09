@@ -102,13 +102,13 @@ for ($i = 1; $i <= $rows; $i++) {
     for ($j = 1; $j <= $cols; $j++) {
         $columnCheck = $j % 2;
         $number = $i * $j;
-        if ($rowCheck !==0 && $columnCheck !==0) {
-            $number = "<b>[$number]</b>";
+        if ($rowCheck !== 0 && $columnCheck !== 0) {
+            $number = "<b> [$number] </b>";
         }
         elseif ($rowCheck === 0 && $columnCheck === 0) {
-            $number = "<b>($number)</b>";
+            $number = "<b> ($number) </b>";
         }
-        echo "<td style='width: 25px; text-align: center'>$number</td>";
+        echo "<td style='width: 25px; text-align: center'> $number </td>";
     }
     echo "</tr>";
 }
