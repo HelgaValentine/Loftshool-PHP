@@ -34,7 +34,7 @@ if (18 <= $age && $age <= 65) {
 elseif (1 <= $age && $age <= 17) {
     echo 'Вам   ещё   рано   работать.';
 }
-elseif ($age>65) {
+elseif ($age > 65) {
     echo 'Вам пора на пенсию.';
 }
 else {
@@ -46,10 +46,14 @@ echo '<br><br><br>';
 
 echo '<b>' . 'Task #4' . '</b><br><br>';
 
-$day = rand (1,10);
+$day = rand (1, 10);
 echo "День № $day" . '<br>';
 switch ($day) {
-    case (1<=$day && $day <= 5):
+    case 1:
+    case 2:
+    case 3:
+    case 4:
+    case 5:
         echo 'Это   рабочий   день.';
         break;
     case 6:
@@ -65,10 +69,21 @@ echo '<br><br><br>';
 
 echo '<b>' . 'Task #5' . '</b><br><br>';
 
-$bmw = array('model' => 'X5', 'speed' => 120, 'doors' => 5, 'year' => 2015);
-$toyota = array('model' => 'Supra', 'speed' => 140, 'doors' => 4, 'year' => 2012);
-$opel = array('model' => 'Vectra', 'speed' => 100, 'doors' => 5, 'year' => 2003);
-$cars = array ('bmv'=>$bmw, 'toyota'=>$toyota, 'opel'=>$opel);
+$bmw = ['model' => 'X5',
+    'speed' => 120,
+    'doors' => 5,
+    'year' => 2015];
+$toyota = ['model' => 'Supra',
+    'speed' => 140,
+    'doors' => 4,
+    'year' => 2012];
+$opel = ['model' => 'Vectra',
+    'speed' => 100,
+    'doors' => 5,
+    'year' => 2003];
+$cars = ['bmv'=>$bmw,
+    'toyota'=>$toyota,
+    'opel'=>$opel];
 foreach ($cars as $key => $value) {
     echo "Car $key<br>";
     echo "{$value["model"]} {$value["speed"]} {$value["doors"]} {$value["year"]}<br><br><br>";
@@ -81,13 +96,13 @@ echo '<b>' . 'Task #6' . '</b><br><br>';
 echo "<table style='border: 1px solid black'>";
 $cols = 10;
 $rows = 10;
-for ($i = 1; $i<=$rows; $i++) {
+for ($i = 1; $i <= $rows; $i++) {
     echo "<tr style='height: 25px'>";
     $rowCheck = $i % 2;
     for ($j = 1; $j <= $cols; $j++) {
         $columnCheck = $j % 2;
         $number = $i * $j;
-        if ($rowCheck !=0 && $columnCheck !=0) {
+        if ($rowCheck !==0 && $columnCheck !==0) {
             $number = "<b>[$number]</b>";
         }
         elseif ($rowCheck === 0 && $columnCheck === 0) {
