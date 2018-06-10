@@ -11,13 +11,13 @@ function task1($arrayString, $boolean = false)
 }
 
 
-function  task2(string $operator)
+function task2(string $operator)
 {
     for ($i = 0; $i < func_num_args(); $i++) {
         $param = func_get_arg($i);
         $type = gettype($param);
         if ($i === 0) {
-            if($type !== 'string')
+            if ($type !== 'string')
                 return 'Не указан оператор для вычислений';
         } else {
             if ($type === 'integer' || $type === 'double') {
@@ -61,7 +61,7 @@ function  task2(string $operator)
 
 function task3(int $rows, int $cols)
 {
-    if (gettype($rows)!== 'integer' || gettype($cols)!== 'integer' || $rows < 1 || $cols < 1) {
+    if (gettype($rows) !== 'integer' || gettype($cols) !== 'integer' || $rows < 1 || $cols < 1) {
         echo 'Некорректно указаны размеры таблицы умножения';
         return;
     } else {
@@ -90,7 +90,7 @@ function task5()
 {
     $str1 = 'Карл у Клары украл Кораллы';
     echo 'Дано: ' . $str1 . '<br>';
-    echo 'Результат: ' . mb_ereg_replace('К', 'к', $str1) . '<br>'. '<br>';
+    echo 'Результат: ' . mb_ereg_replace('К', 'к', $str1) . '<br>' . '<br>';
     $str2 = 'Две бутылки лимонада';
     echo 'Дано: ' . $str2 . '<br>';
     echo 'Результат: ' . mb_ereg_replace('Две', 'Три', $str2);
